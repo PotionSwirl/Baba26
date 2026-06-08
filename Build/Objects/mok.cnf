@@ -1,0 +1,16 @@
+[ req ]
+distinguished_name = req_distinguished_name
+x509_extensions = v3_namespaces
+string_mask = utf8only
+prompt = no
+
+[ req_distinguished_name ]
+CN = Baba26
+
+[ v3_namespaces ]
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer
+basicConstraints = critical,CA:FALSE
+# REMOVE the module signing OID. Standard codeSigning is all you need for an EFI executable.
+extendedKeyUsage = codeSigning
+nsComment = "OpenSSL Generated Certificate for MOK"
